@@ -1,0 +1,60 @@
+# Default configuration for Xiaomi timing & valuation
+symbols:
+  target: "HK.01810"
+  ev_peers:
+    - "HK.01211"
+    - "HK.00175"
+    - "HK.02015"
+    - "HK.09868"
+    - "HK.09866"
+  core_peers:
+    - "HK.00992"
+    - "HK.00285"
+    - "HK.02382"
+    - "HK.02018"
+    - "HK.00700"
+    - "HK.09988"
+  hstech: "HSTECH"
+
+futu:
+  host: "127.0.0.1"
+  port: 11111
+  max_retry: 2
+  retry_sleep: 1.0
+
+kline:
+  target_days: [60, 120, 250]
+  hstech_days: 250
+
+position:
+  cap: 0.80
+  add_step: 0.10
+  reduce_step: 0.15
+  min_trade_delta: 0.05
+
+risk:
+  rv_short: 20
+  rv_mid: 60
+  rv_long: 120
+
+regime:
+  ma_short: 50
+  ma_long: 200
+  vol_ratio_high: 1.4
+  vol_ratio_low: 0.9
+  vol_ratio_extreme: 1.8
+  dd_extreme: -0.20
+  dd_very_extreme: -0.25
+  ma_buffer: 0.005
+  confirm_days: 3
+
+p_ewma:
+  half_life: 15
+
+outputs:
+  csv_path: "outputs/daily_signals.csv"
+  state_path: "outputs/state.json"
+  cache_dir: "outputs/cache"
+
+logging:
+  level: "INFO"
